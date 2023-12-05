@@ -1,5 +1,5 @@
 <?php
-    setcookie('user', $user['FIO'], time() - 3600, "/");
+    setcookie('user', $user['Login'], time() - 3600, "/");
 
     header('Location: /');
 ?>
