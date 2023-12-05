@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    background-color: rgb(153, 153, 153);
+    background: url("../Images/fon2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0px;
+    margin: 0px;
+}
+
+.userProfile {
+    font-size: 20px;
+    text-align: left;
+    padding: 12px 0px;
+    margin: 0px;
+}
+
+.zagolovok {
+    position: relative;
+    background-color: rgba(0, 225, 255, 0.555);
+    width: 100%;
+    font-size: 50px;
+    text-align: center;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    padding: 12px 0px;
+    margin: 0px;
+}
+
+.logout {
+    position: absolute;
+    background-color: none;
+    width: auto;
+    font-size: 10pt;
+    text-align: right;
+    text-decoration: none;
+    color: black;
+}
+
+.Forma {
+    display: flex;
+    background-color: rgba(0, 225, 255, 0.329);
+    border-radius: 16px;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 614px;
+    /*614px */
+}
+
+
+/* .Forma:hover {
+    width: 614px;
+    transition: .3s ease;
+} */
+
+.selector {
+    display: flex;
+    /*flex*/
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.658);
+    border-radius: 16px;
+}
+
+
+/* .selector:hover {
+    display: flex;
+} */
+
+.stroka {
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+}
+
+.iconProfile {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    padding-top: 30px;
+}
+
+.Profile {
+    width: 100px;
+    height: 100px;
+}
+
+.prof {
+    width: 220px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.445);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 16px;
+}
+
+.fio {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.button {
+    position: absolute;
+    display: block;
+    background-color: slategray;
+    color: white;
+    border: solid 1;
+    border-color: rgba(0, 0, 0, 0.377);
+    padding: 10px 70px;
+    border-radius: 7px;
+    margin-top: 35%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button:hover {
+    background-color: rgb(22, 22, 22);
+}
+
+button:active {
+    background-color: skyblue;
+}
