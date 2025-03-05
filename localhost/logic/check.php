@@ -1,6 +1,10 @@
 <?php
+    setcookie('excellent', '2',time() + 2, "/");
+
     $FIO = filter_var(trim($_POST['FIO']));
-    
+
+    $WhoIS = filter_var(trim($_COOKIE['FIO']));
+    $Otdel = filter_var(trim($_COOKIE['Otdel']));
     $LanDocs = filter_var(trim($_POST['LanDocs']));
     $Kasper = filter_var(trim($_POST['Kasper']));
     $Konsultant = filter_var(trim($_POST['Konsultant']));
@@ -85,10 +89,10 @@
         $zip = 0;
     }
 
-    $mysql = new mysqli('localhost', 'root', 'root', 'Priemka');
-    $mysql->query("INSERT INTO Priem (FIO, LanDocs, Kasper, Konsultant, Chromium, NetAgent, Office, KriptoPro, `Plugins`, SecretNet, Spark, AdobeReader, `7-zip`) VALUES ('$FIO', '$LanDocs', '$Kasper', '$Konsultant', '$Chromium', '$NetAgent', '$Office', '$KriptoPro', '$Plugins', '$SecretNet', '$Spark', '$AdobeReader', '$zip')");
+    $mysql = new mysqli('MySQL-8.2', 'root', '', 'Priemka');
+    $mysql->query("INSERT INTO Priem (WhoIS, Otdel, FIO, LanDocs, Kasper, Konsultant, Chromium, NetAgent, Office, KriptoPro, `Plugins`, SecretNet, Spark, AdobeReader, `7-zip`) VALUES ('$WhoIS', '$Otdel', '$FIO', '$LanDocs', '$Kasper', '$Konsultant', '$Chromium', '$NetAgent', '$Office', '$KriptoPro', '$Plugins', '$SecretNet', '$Spark', '$AdobeReader', '$zip')");
     
     $mysql->close();
-
+    
     header('Location: \Function.php');
 ?>

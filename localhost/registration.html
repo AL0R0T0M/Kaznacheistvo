@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -12,12 +12,30 @@
 <body>
     <form class="autorization" action="logic/checkREG.php" method="post" id="form">
         <p>Регистрация</p>
-        <input type="text" name="login" placeholder="login">
-        <input type="password" name="password" placeholder="password">
-        <input type="text" name="FIO" placeholder="ФИО">
-        <input type="text" name="otdel" placeholder="Наименование отдела">
+        <input type="text" name="login" placeholder="login" id="log" required>
+        <input type="password" name="password" placeholder="password" id="PassW" required>
+        <input type="text" name="FIO" placeholder="ФИО" id="tel" required>
+        <input type="text" name="otdel" placeholder="Наименование отдела" id="tel2" required>
         <button type="submit" name="submit" id="submit" class="knopka">Зарегистрировать</button>
     </form>
+    <script>
+        let regUAinvalid = /[^A-Za-zA]/g;
+        let regRUinvalid = /[^А-Яа-яЁё ]/g;
+        let regRU = /[Яа-яЁё]/g;
+        let reg = /[A-Za-zA]/g;
+        tel.oninput = function() {
+            this.value = this.value.replace(regRUinvalid, '');
+        }
+        tel2.oninput = function() {
+            this.value = this.value.replace(regRUinvalid, '');
+        }
+        log.oninput = function() {
+            this.value = this.value.replace(regUAinvalid, '');
+        }
+        PassW.oninput = function() {
+            this.value = this.value.replace(regRU, '');
+        }
+    </script>
     <!-- <script src="script.js"></script> -->
 </body>
 

@@ -1,3 +1,14 @@
+<?php 
+    if($_COOKIE['excellent'] == '2'){setcookie('excellent', '2',time() - 2, "/");}
+    if($_COOKIE['FIO'] == ''){
+        header('Location: \index.php');
+        exit();
+    }
+    if($_COOKIE['excellent'] == '2'){
+        $excellent = "<script>alert('Успешно отправлено!');</script>";
+        echo $excellent;
+    }
+?>
 <!DOCTYPE html>
 <html>
 
@@ -7,24 +18,46 @@
     <title>Test</title>
     <link rel="stylesheet" href="Style/style.css">
     <link rel="shortcut icon" href="Images/icon.png" type="image/x-icon">
+    <script type="text/javascript">
+        function preventBack(){window.history.forward()};
+        setTimeout("preventBack()", 0);
+        window.onunload=function(){null;}
+    </script>
 </head>
 
 <body>
     <?php
-        if($_COOKIE['user'] != ''){
+        if($_COOKIE['session'] == ''){
             $alert = '<script>alert("Вы успешно вошли в аккаунт!")</script>';
             echo $alert;
+            setcookie('session', 1);
         }
+        $LogFIO = $_COOKIE['FIO'];
     ?>
-    <p class="zagolovok">Приём пользователя</p>
-    <a href="logic/exit.php" class="logout">выйти</a>
+<?php
+    if($_COOKIE['FIO'] != ''):
+?>
+    <div class="zagolovok">
+        <div class="zagolovokBLOCK1">
+            <div>
+                <img src="Images/profile.png" alt="profileIcon" class="ProfileAK">
+            </div>
+            <div>
+                <?php echo $LogFIO; ?>
+            </div>
+        </div>
+        <div class="zagolovokBLOCK2">
+            <p><a href="logic/exit.php" class="logout">выйти</a></p>
+        </div>
+    </div>
+
     <form class="Forma" action="logic/check.php" method="post" id="form">
         <div class="prof">
             <div class="iconProfile">
                 <img src="Images/profile.png" alt="profileIcon" class="Profile">
             </div>
             <div class="fio">
-                <input type="text" name="FIO" id="FIO" placeholder="ФИО">
+                <input type="text" name="FIO" id="stra" placeholder="ФИО">
             </div>
         </div>
         <div class="selector">
@@ -63,6 +96,16 @@
         </div>
         <input type="submit" class="button"></input>
     </form>
+    <script>
+        let reg = /[A-Za-zA]/g;
+        stra.oninput = function() {
+            this.value = this.value.replace(reg, '');
+        }
+    </script>
+<?php 
+    endif; 
+?>
+
     <!-- <script src="script.js"></script> -->
     <!-- <a href="test.html">TEST</a> -->
 </body>
